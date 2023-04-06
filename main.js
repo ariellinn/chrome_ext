@@ -12,6 +12,7 @@ body.appendChild(gif);
 gif.style.position = 'fixed';
 gif.style.width = "150px"
 gif.style.top = '20%';
+gif.style.objectPosition = '100px'
 
 function incrementGif() {
   const old = Number(gif.style.width.replace('px', '')) + 1;
