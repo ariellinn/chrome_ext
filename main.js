@@ -10,13 +10,13 @@ const gif = document.createElement('img');
 gif.src = images[Math.floor(Math.random() * 6)];
 body.appendChild(gif);
 gif.style.position = 'fixed';
-gif.style.width = "150px"
+gif.style.width = "10%"
 gif.style.top = '20%';
 
 function incrementGif() {
-  const old = Number(gif.style.width.replace('px', '')) + 1;
-  gif.style.width = `${old}px`;
-  if (gif.style.width !== '600px') { setTimeout(incrementGif.bind(this), 100); }
+  const old = Number(gif.style.width.replace('%', '')) + 0.2;
+  gif.style.width = `${old}%`;
+  if (gif.style.width !== '40%') { setTimeout(incrementGif.bind(this), 100); }
 }
 
 incrementGif();
