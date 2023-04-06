@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "chrome_ext",
+  "name": "MemeDN",
   "version": "1.0",
   "content_scripts": [
     {
