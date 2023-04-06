@@ -5,6 +5,10 @@ const images = ["https://s3.getstickerpack.com/storage/uploads/sticker-pack/twit
   "https://media.tenor.com/HnJpjRirG5UAAAAC/jackie-chan-meme.gif",
   "https://media.tenor.com/9wHj0SnxEb8AAAAC/lost-confused.gif"
 ]
+
+const memes = []
+
+
 const body = document.querySelector('body');
 const gif = document.createElement('img');
 gif.src = images[Math.floor(Math.random() * 6)];
@@ -13,10 +17,22 @@ gif.style.position = 'fixed';
 gif.style.width = "10%"
 gif.style.top = '20%';
 
-function incrementGif() {
+
+
+function increment() {
   const old = Number(gif.style.width.replace('%', '')) + 0.2;
   gif.style.width = `${old}%`;
-  if (gif.style.width !== '40%') { setTimeout(incrementGif.bind(this), 100); }
+  if (gif.style.width !== '40%') { setTimeout(increment.bind(this), 100); }
 }
 
-incrementGif();
+function replaceEveryThreeLinks() {
+  const pLinks = document.querySelectorAll("p > a");
+  for (let i = 0; i < pLinks.length; i++) {
+    if (i % 3 === 0 || i === 1) {
+      pLinks[i].href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+  }
+}
+
+increment();
+replaceEveryThreeLinks();
