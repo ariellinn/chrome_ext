@@ -1,15 +1,14 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 3,
   "name": "chrome_ext",
   "version": "1.0",
-  "description": "What we doing",
   "content_scripts": [
     {
-      "js": [
-        "main.js"
-      ],
       "matches": [
         "https://developer.mozilla.org/*"
+      ],
+      "js": [
+        "main.js"
       ]
     }
   ]
